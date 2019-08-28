@@ -6,3 +6,11 @@
         url('../fonts/IRANSansDNFaNum/IRANSansDNFaNum.otf') format('opentype'),
         url('../fonts/IRANSansDNFaNum/IRANSansDNFaNum.svg#Yekan') format('svg');
 }
+@font-face{
+    font-family:"yekan";
+    src:url('../fonts/Yekan/Yekan.eot');
+    src:
+        url('../fonts/Yekan/Yeka.off') format("woff"),
+        url('../fonts/Yekan/Yekan.otf') format('opentype'),
+        url('../fonts/Yekan/Yekan.svg#Yekan') format('svg');
+}
