@@ -1,61 +1,59 @@
 <footer class='container-fluid bg-flat-2 text-flat-7 '>
             <div class='d-flex flex-column flex-md-row flex-wrap justify-content-around  px-3 py-5'>
                 <div class='col-12 col-sm-10 col-md-5 col-lg-3 text-right'>
-                    <header class='pb-3'>
-                        <h4>در باره ما </h4>
-                    </header>
-                    <p>این پست یک امتحان است و یک خلاصه ای از اخرین پست را در اینجا نشان میدهد شرکت بهدا شیمی یاقوت البرز با بهره گیری از دانش روز و با آخرین تکنولوژی روز دونیا در تولید و سنتز مواد شوینده و پاک کننده و چزیری زدا در راستای اعتلای و خود سازی ملی جهت بومی سازی صنعت مواد شوینده پا یه عرصه وجود گذاشت </p> 
+
+                        <?php dynamic_sidebar( 'footer_1' ) ?>
+                
                 </div>
                 <div class='col-12 col-sm-10 col-md-5 col-lg-3 text-right'>
                     <header class='pb-3'>
-                        <h4>شبکه های اجتمایی </h4>
+                        <h4> <?php _e('socila netword','behda'); ?>  </h4>
                     </header>
-                    <div>
-                        <ul class='pr-0'>
-                            <li class='pr-0 py-1'>
-                                <a href="" class='text-flat-7' ><i class='fab fa-linkedin  fa-2x'></i><span class='pr-2'>linkin</span></a>
-                                <hr>
-                            </li>
-                             <li class='pr-0 py-1'>
-                                <a href="" class='text-flat-7'><i class='fab fa-twitter  fa-2x'></i><span class='pr-2'>twitter</span></a>
-                                <hr>
-                            </li>
-                             <li class='pr-0 py-1'>
-                                <a href="" class='text-flat-7'><i class='fa fa-at  fa-2x'></i><span class='pr-2'>email:info@behdairan.com</span></a>
-                                <hr>
-                            </li>
-                            
+                    <?php if( has_nav_menu('social')): ?>
 
-                        </ul>
-                    </div>
+                        <?php wp_nav_menu(
+                            array(
+                                'theme_location'    => 'social',
+                                'menu_class'        => 'pr-0',
+                                'container_class'   => '',
+                                'container_id'      => 'social_menu_footer',
+                                'link_before'       => '<span class="text-flat-7 pr-0 py-1">',
+                                'link_after'        => '<hr></span>',
+                                'depth'             => 2,
+                            )
+                            );  ?>
+                    <?php endif; ?>
+
                 </div>
               <div class='col-12 col-sm-10 col-md-5 col-lg-3 text-right'>
                     <header class='pb-3'>
-                        <h4>پینود های سریع </h4>
+                        <h4> <?php _e('fast link','behda'); ?> </h4>
                     </header>
-                    <div>
-                        <ul class='pr-0'>
-                            <li class='pr-0 py-1'>
-                                <a href="" class='text-flat-7' ><i class='fa fa-angle-double-left   fa-sm'></i><span class='pr-2'>linkin</span></a>
-                            </li>
-                             <li class='pr-0 py-1'>
-                                <a href="" class='text-flat-7'><i class='fa fa-angle-double-left   fa-sm'></i><span class='pr-2'>twitter</span></a>
-                            </li>
-                             <li class='pr-0 py-1'>
-                                <a href="" class='text-flat-7'><i class='fa fa-angle-double-left   fa-sm'></i><span class='pr-2'>email:info@behdairan.com</span></a>
-                            </li>
-                            
 
-                        </ul>
-                    </div>
+                    <?php if( has_nav_menu('speed_link')): ?>
+
+                        <?php wp_nav_menu(
+                            array(
+                                'theme_location'    => 'speed_link',
+                                'menu_class'        => 'pr-0',
+                                'container_class'   => '',
+                                'container_id'      => 'fast_link_footer',
+                                'link_before'       => '<span class="text-flat-7 pr-0 py-1"><i class="fa fa-angle-double-left   fa-sm"></i><span class="pr-2">',
+                                'link_after'        => '</span></span>',
+                                'depth'             => 2,
+                            )
+                            );  ?>
+                    <?php endif; ?>
                 </div>
                 <div class='col-12 col-sm-10 col-md-5 col-lg-3 text-center'>
-                    <figure class='m-0 p-0'>
-                        <img class='img-fluid'src='img/logo.png' >
-                    </figure>
-                    <figure class='m-0 p-0  d-none d-md-block '>
-                        <img class='img-fluid'src='img/rq.png' >
-                    </figure>
+                    <?php if(has_custom_logo()): ?>
+
+                        <figure class='m-0 p-0'>
+                            <?php  the_custom_logo(); ?>
+                        </figure>
+
+                    <?php endif; ?>
+                    
 
 
                 </div>

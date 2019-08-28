@@ -11,7 +11,9 @@
             ?>
             <div class='postitem col-12 col-sm-10  col-md-5  col-lg-3  m-2 text-right p-0'>
                 <figure class='mb-0'>
-                    <img class='img-fluid' alt='' src='img/bg/1.jpg'>
+                    <?php if(has_post_thumbnail(get_the_ID())): ?>
+                            <img class='img-fluid' alt='<?php echo get_the_post_thumbnail_caption( get_the_ID() ); ?>' src='<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>'>
+                    <?php endif; ?>
                 </figure>
                 <div class='bg-flat-8 p-2'>
                     <h4 class='p-2 '><b><?php the_title(); ?></b></h4>
